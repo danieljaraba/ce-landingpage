@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.navbar-logo{
+  height: 32px;
+  width: 112px;
+  object-fit: cover;
+}
+
+.hero-image{
+  object-fit: cover;
+  width: 500px;
+  height: 230px;
+}
+
+.form-image{
+  height: 64px;
+  width: 224px;
+  object-fit: cover;
+}
+
+html{
+  scroll-behavior: smooth;
+}
