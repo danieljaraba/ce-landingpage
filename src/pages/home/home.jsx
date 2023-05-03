@@ -9,20 +9,18 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <section className="flex flex-col lg:flex-row my-24 px-8 h-[61vh]">
+      <section className="flex flex-col lg:flex-row my-24 px-16 h-[61vh]">
         <div className="flex flex-col lg:max-w-xl xl:max-w-2xl">
-          <h1 className="font-roboto text-5xl py-2">¿Lo necesitas? Lo tenemos</h1>
+          <h1 className="font-roboto text-5xl py-2 text-justify">Consigue los mejores materiales, al precio más bajo, y en un instante.</h1>
           <p className="py-2 text-2xl text-gray-400 text-justify">
-            Construye tu futuro con nuestra empresa a tu lado. Te ofrecemos todo
-            lo necesario para tus proyectos. ¡Juntos haremos tus sueños
-            realidad!
+            Ayudamos a las personas y empresas a vender y comprar materiales de construcción de forma rápida a un precio competitivo para reducir los costos generados por la desinformación.
           </p>
           <div className="flex flex-row content-start items-center pt-10">
             <a href="#form-screen" className="bg-yellow-400 text-white font-roboto py-2 px-4 rounded-xl">¡Empecemos!</a>
           </div>
         </div>
         <div className="flex grow items-center justify-center">
-          <img className="hero-image" src="../../../public/tools-and-material.svg" />
+          <img className="hero-image" src="/tools-and-material.svg" />
         </div>
       </section>
       <section className="h-[120vh] bg-gradient-to-br from-orange-500 to-yellow-300 flex flex-col">
@@ -57,7 +55,7 @@ const Home = () => {
         </div>
       </section>
       <section id="form-screen" className="h-screen bg-gray-200">
-        <img className="form-image px-8 pt-10" src="../../../public/construkta.svg" />
+        <img className="form-image px-8 pt-10" src="/construkta.svg" />
         <div className="flex flex-row">  
           <div className="px-8 pt-8 flex flex-col">
             <div className="">
@@ -91,7 +89,7 @@ const Home = () => {
             </form>
           </div>
           <div className="flex flex-row grow items-center justify-center">
-            <img src="../../../public/agent.png" />
+            <img src="/agent.png" />
           </div>
         </div>
       </section>
