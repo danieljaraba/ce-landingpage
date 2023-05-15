@@ -1,11 +1,25 @@
-import React from "react";
+//import React from "react";
 import Navbar from "../../components/container/Navbar";
 import { IoMdListBox } from "react-icons/io";
 import { MdMoneyOff } from "react-icons/md";
 import { BsStarHalf } from "react-icons/bs";
 import { IconContext } from "react-icons";
+import { db } from "../../assets/db/firebase";
+import { collection, addDoc } from "firebase/firestore"
 
 const Home = () => {
+
+  const handleSubmit = (event) => {
+    const form = event.target
+    addDoc(collection(db, "users"), {
+      first : form.fname.value,
+      last : form.lname.value,
+      email : form.email.value,
+      type : form.type.value
+    })
+    event.preventDefault()
+  }
+
   return (
     <>
       <Navbar />
@@ -62,22 +76,22 @@ const Home = () => {
               <h1 className="font-roboto text-3xl text-gray-600">Compartenos tu información de contacto.</h1>
               <h1 className="font-roboto text-3xl">¡Nos comunicaremos contigo al instante!</h1>
             </div>
-            <form className="pt-12 px-4">
+            <form onSubmit={handleSubmit} className="pt-12 px-4">
               <div className="flex flex-row py-2 items-center">
-                <label className="font-roboto w-48" for="fname" >Nombre(s)</label>
-                <input className="w-64 h-8 rounded-lg px-2 font-roboto" type="text" id="fname" />
+                <label className="font-roboto w-48" htmlFor="fname" >Nombre(s)</label>
+                <input className="w-64 h-8 rounded-lg px-2 font-roboto" type="text" id="fname" name="fname" />
               </div>
               <div className="flex flex-row py-2 items-center">
-                <label className="font-roboto w-48" for="lname" >Apellido(s)</label>
-                <input className="w-64 h-8 rounded-lg px-2 font-roboto" type="text" id="lname" />
+                <label className="font-roboto w-48" htmlFor="lname" >Apellido(s)</label>
+                <input className="w-64 h-8 rounded-lg px-2 font-roboto" type="text" id="lname" name="lname" />
               </div>
               <div className="flex flex-row py-2 items-center">
-                <label className="font-roboto w-48" for="email" >Correo</label>
-                <input className="w-64 h-8 rounded-lg px-2 font-roboto" type="email" id="email" />
+                <label className="font-roboto w-48" htmlFor="email" >Correo</label>
+                <input className="w-64 h-8 rounded-lg px-2 font-roboto" type="email" id="email" name="email"/>
               </div>
               <div className="flex flex-row py-2 items-center">
-                <label className="font-roboto w-48" for="types-select" >Soy</label>
-                <select className="w-64 h-8 rounded-lg px-2 font-roboto" id="types-select" name="Type">
+                <label className="font-roboto w-48" htmlFor="types-select" >Soy</label>
+                <select className="w-64 h-8 rounded-lg px-2 font-roboto" id="types-select" name="type">
                   <option value="ferreteria">Ferretería</option>
                   <option value="ing-arq">Ingeniero o arquitecto</option>
                   <option value="maestrobr">Maestro de obra</option>
